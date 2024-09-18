@@ -1,7 +1,22 @@
-import "./App.css";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-function App() {
-  return <div className="App">Template App</div>;
+import './App.css';
+
+import { HomePage } from './pages/HomePage';
+import { NewsPage } from './pages/NewsPage';
+
+export default function App() {
+  const router = createBrowserRouter([{
+      path: "/",
+      element: <HomePage />
+  },{
+      path: "/news",
+      element: <NewsPage />
+  },]);
+  
+  return (
+    <div className="App">
+      <RouterProvider router={router} />
+    </div>
+  );
 }
-
-export default App;
